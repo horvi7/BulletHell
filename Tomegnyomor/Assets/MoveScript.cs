@@ -10,41 +10,48 @@ public class MoveScript : MonoBehaviour
     public float speed = 5;
     public GameObject healthBar;
     public Rigidbody2D rigidBody;
-    public Animation walkAnimation;
+    public Animator animator;
+
+    float walkTriggerTimer;
     Vector3 movementVector;
     Transform healthBarPosition;
-    float walkAnimationTimer;
+    
+    
     void Start()
     {
+        walkTriggerTimer = 0;
         healthBarPosition = GetComponent<Transform>();
     }
 
     void Update()
     {
-        walkAnimationTimer += Time.deltaTime;
-        playAnimation();
+        walkTriggerTimer += Time.deltaTime;
         moveCharacter();
         moveHealthBar();
     }
 
-    private void playAnimation()
-    {
-        if(walkAnimationTimer >= 2)
-        {
-            walkAnimation.Play();
-            walkAnimationTimer = 0;
-        }
-    }
-
+  
     void moveCharacter()
     {
         movementVector.x = Input.GetAxis("Horizontal");
         movementVector.y = Input.GetAxis("Vertical");
         movementVector *= speed;
         rigidBody.velocity = movementVector;
-        if (movementVector != new Vector3(0, 0, 0)) playAnimation();
-        playAnimation();
-
+        if (movementVector != new Vector3(0, 0, 0) && walkTriggerTimer >= 0.75)
+        {
+            playWalkAnimation();
+            walkTriggerTimer = 0;
+        }
+        else playIdleAniamtion();   
+    }
+    private void playWalkAnimation()
+    {
+        animator.SetTrigger("Walking");
+    }
+    private void playIdleAniamtion()
+    {
+        animator.SetTrigger("Standing");
+        
     }
     void moveHealthBar()
     {
