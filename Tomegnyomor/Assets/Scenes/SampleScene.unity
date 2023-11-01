@@ -464,6 +464,18 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4361182636781176292, guid: 3f342161fd81307439ae403e7fbe32ae, type: 3}
   m_PrefabInstance: {fileID: 1486879666}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1041237620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041237603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2be911638334c4493daa5aae16b302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1064107886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -557,6 +569,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 059d2f793cb2e0b40b20ba2045d9dce5, type: 3}
+--- !u!1 &1100288913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1100288915}
+  - component: {fileID: 1100288914}
+  m_Layer: 0
+  m_Name: ---ENEMIES---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1100288914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100288913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c6f7ec0c803464d95b674658a5a096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 5517283671334028834, guid: 9348291473d3c4943b8e39c4ee2ef868, type: 3}
+  spawnArea: {x: 15, y: 8}
+  spawnTimer: 2
+  player: {fileID: 1041237603}
+--- !u!4 &1100288915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100288913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206828296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2128689862470779847, guid: 059d2f793cb2e0b40b20ba2045d9dce5, type: 3}
@@ -659,6 +719,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4361182636781176295, guid: 3f342161fd81307439ae403e7fbe32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1041237617}
+    - targetCorrespondingSourceObject: {fileID: 4361182636781176295, guid: 3f342161fd81307439ae403e7fbe32ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1041237620}
   m_SourcePrefab: {fileID: 100100000, guid: 3f342161fd81307439ae403e7fbe32ae, type: 3}
 --- !u!1 &1488177415 stripped
 GameObject:
@@ -797,6 +860,7 @@ GameObject:
   - component: {fileID: 1971371165}
   - component: {fileID: 1971371164}
   - component: {fileID: 1971371167}
+  - component: {fileID: 1971371168}
   m_Layer: 0
   m_Name: TesterGameObject
   m_TagString: Shotgun
@@ -943,6 +1007,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1971371168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971371163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2be911638334c4493daa5aae16b302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -951,3 +1027,4 @@ SceneRoots:
   - {fileID: 1486879666}
   - {fileID: 1971371166}
   - {fileID: 1571670881}
+  - {fileID: 1100288915}
