@@ -11,7 +11,7 @@ public class ShootScript : MonoBehaviour
     [SerializeField] Transform firingPoint;
     [SerializeField] float bulletLifeTime = 3f;
     [SerializeField] float shootingRate = 0.5f;
-    [SerializeField] float bulletSpeed = 0.5f;
+    [SerializeField] float bulletSpeed;
     private float fireTimer;
     void Start()
     {
@@ -35,7 +35,7 @@ public class ShootScript : MonoBehaviour
         shootDirection.z = 0.0f;
         shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
         shootDirection = shootDirection - firingPoint.position;
-        var bulletInstance = Instantiate(bulletPrefab, firingPoint.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+        var bulletInstance = Instantiate(bulletPrefab, firingPoint.position, Quaternion.Euler(new Vector3(0, 0, -90)));
         bulletInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x * bulletSpeed, shootDirection.y * bulletSpeed);
         Destroy(bulletInstance, bulletLifeTime);
     }
