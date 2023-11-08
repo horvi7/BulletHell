@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class HitScript : MonoBehaviour
 {
-    public HealthManagerScript healthManager;
+    public Character character;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        healthManager.gotHit(collision);
+        character.gotHit(collision);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        healthManager.continousDamage(collision);
+        character.continousDamage(collision);
     }
 
 }

@@ -37,16 +37,14 @@ public class MoveScript : MonoBehaviour
     private void turnCharacter()
     {
             var scale = transform.localScale;
-            float flip = 1;
-            if (gameObject.transform.position.y < Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
+             float flip;
+            if (gameObject.transform.position.x < Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
             {
                 flip = 0.75f;
-                Debug.Log("Jobbra nézz");
             }
             else
             {
                 flip = -0.75f;
-                Debug.Log("Balra néz");
             }
             gameObject.transform.localScale = new Vector3(flip, scale.y, scale.z);
             turnTimer = 0;
