@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6336104676922299786}
   m_Layer: 0
   m_Name: Green_slime_Idle
-  m_TagString: Untagged
+  m_TagString: Green Slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,3 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  currentHealth: 2
+  Tag: DefaultGunBullet

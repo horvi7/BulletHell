@@ -32,6 +32,20 @@ public class EnemiesManager : MonoBehaviour
         newEnemy.transform.parent = transform;
     }
 
+    //public void gotHit(Collision2D collision, GameObject enemy)
+    //{
+    //    //Shotgun egy példa. Ide kell kerülnie minden olyan dolognak, ami megsebezheti a karaktert.
+    //    if (enemy.GetComponent<Enemy>().currentHealth > 0)
+    //    {
+    //        if (collision.gameObject.tag == enemy.GetComponent<Enemy>().Tag)
+    //        {
+    //            enemy.GetComponent<Enemy>().currentHealth -= 2;
+    //            Debug.Log(enemy.GetComponent<Enemy>().Tag + " attacked");
+    //        }
+    //    }
+    //    else Destroy(enemy);
+    //}
+
     private Vector3 GenerateRandomPosition()
     {
         Vector3 position = new Vector3();

@@ -6,10 +6,27 @@ public class Enemy : MonoBehaviour
 {
     Transform targetDestination;
     GameObject targetGameObject;
-    Character targetCharatcer;
+    HealthManagerScript targetCharatcer;
     [SerializeField] float speed;
+    
 
     Rigidbody2D rgdbd2d;
+
+    [SerializeField] int hp = 4;
+    [SerializeField] int damage = 1;
+    //public void gotHit(Collision2D collision)
+    //{
+    //    //Shotgun egy példa. Ide kell kerülnie minden olyan dolognak, ami megsebezheti a karaktert.
+    //    if (currentHealth > 0)
+    //    {
+    //        if (collision.gameObject.tag == Tag)
+    //        {
+    //            currentHealth -= 2;
+    //            Debug.Log(Tag + " attacked");
+    //        }
+    //    }
+    //    else Destroy(gameObject);
+    //}
 
     private void Awake()
     {
@@ -38,6 +55,23 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Attacking the character");
+        //Debug.Log("Attacking the character");
+        if (targetCharatcer == null) 
+        { 
+            targetCharatcer = targetGameObject.GetComponent<HealthManagerScript>();
+        }
+
+        targetCharatcer.TakeDamage(damage);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+        Debug.Log(hp + " enemy hp");
+
+        if (hp < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

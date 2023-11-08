@@ -25580,7 +25580,7 @@ MonoBehaviour:
   enemy: {fileID: 5517283671334028834, guid: 9348291473d3c4943b8e39c4ee2ef868, type: 3}
   spawnArea: {x: 15, y: 8}
   spawnTimer: 2
-  player: {fileID: 1041237603}
+  player: {fileID: 1645614457}
 --- !u!4 &1100288915
 Transform:
   m_ObjectHideFlags: 0
@@ -25793,6 +25793,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1 &1856232330
 GameObject:
   m_ObjectHideFlags: 0
@@ -25806,7 +25807,7 @@ GameObject:
   - component: {fileID: 1856232333}
   m_Layer: 6
   m_Name: DefaultGun
-  m_TagString: Untagged
+  m_TagString: DefaultGunBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

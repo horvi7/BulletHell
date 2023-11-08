@@ -47,4 +47,14 @@ public class ShootScript : MonoBehaviour
         bulletInstance.GetComponent<Rigidbody2D>().velocity = velocity;
         Destroy(bulletInstance, bulletLifeTime);
     }
+
+    public void ApplyDamage(Collider2D collider)
+    {
+        Enemy e = collider.GetComponent<Enemy>();
+        if (e != null)
+        {
+            collider.GetComponent<Enemy>().TakeDamage(2);
+        }
+        
+    }
 }

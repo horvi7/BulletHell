@@ -34,29 +34,7 @@
 //        }
 //    }
 
-//    public void gotHit(Collision2D collision)
-//    {
-//        //Shotgun egy példa. Ide kell kerülnie minden olyan dolognak, ami megsebezheti a karaktert.
-//        if (currentHealth > 0)
-//        {
-//            if (collision.gameObject.tag == "Shotgun")
-//            {
-//                currentHealth -= 2;
-//            }
-//        }
-//    }
-//    public void continousDamage(Collision2D collision)
-//    {
-//        if (currentHealth > 0)
-//        {
-//            //TODO: Pl tûzben áll akkor mennyit sebzõdjön. Eggyel feljebbi fv jó példa.
-//            //Kell bele valami idõzítés, különben élet lemegy pillanat alatt.
-//        }
-//    }
-//    private void setGreenHealthLength()
-//    {
-//        greenHealth.GetComponent<Image>().fillAmount = currentHealth / 100;
-//    }
+
 
 
 //}

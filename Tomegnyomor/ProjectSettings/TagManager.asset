@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shotgun
+  - Green Slime
+  - DefaultGunBullet
   layers:
   - Default
   - TransparentFX
