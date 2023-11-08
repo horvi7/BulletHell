@@ -25380,7 +25380,7 @@ MonoBehaviour:
   enemy: {fileID: 5517283671334028834, guid: 9348291473d3c4943b8e39c4ee2ef868, type: 3}
   spawnArea: {x: 15, y: 8}
   spawnTimer: 2
-  player: {fileID: 1041237603}
+  player: {fileID: 1645614457}
 --- !u!4 &1100288915
 Transform:
   m_ObjectHideFlags: 0
@@ -25617,6 +25617,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenHealth: {fileID: 1206828296}
   currentHealth: 100
+  Tag: Green Slime
+  ss: {fileID: 0}
 --- !u!4 &1645614459
 Transform:
   m_ObjectHideFlags: 0
@@ -25646,7 +25648,7 @@ GameObject:
   - component: {fileID: 1856232333}
   m_Layer: 0
   m_Name: DefaultGun
-  m_TagString: Untagged
+  m_TagString: DefaultGunBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

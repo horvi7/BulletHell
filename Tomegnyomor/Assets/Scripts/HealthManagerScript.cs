@@ -12,6 +12,8 @@ public class HealthManagerScript : MonoBehaviour
     public GameObject greenHealth;
     public float currentHealth = maxHealth;
     private const float maxHealth = 100f;
+    public string Tag;
+    public ShootScript ss;
 
     float timer = 0;
     void Update()
@@ -37,13 +39,7 @@ public class HealthManagerScript : MonoBehaviour
     public void gotHit(Collision2D collision)
     {
         //Shotgun egy példa. Ide kell kerülnie minden olyan dolognak, ami megsebezheti a karaktert.
-        if (currentHealth > 0)
-        {
-            if (collision.gameObject.tag == "Shotgun")
-            {
-                currentHealth -= 2;
-            }
-        }
+            
     }
     public void continousDamage(Collision2D collision)
     {
@@ -57,6 +53,16 @@ public class HealthManagerScript : MonoBehaviour
     {
         greenHealth.GetComponent<Image>().fillAmount = currentHealth / 100;
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if(currentHealth <= 0)
+        {
+            Debug.Log("Character death");
+        }
+    }
+
 
 
 }

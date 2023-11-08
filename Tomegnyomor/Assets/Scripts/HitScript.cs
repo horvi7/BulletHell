@@ -8,12 +8,20 @@ public class HitScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        healthManager.gotHit(collision);
+        //healthManager.gotHit(collision);
+        //if (healthManager.currentHealth == 0)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        healthManager.continousDamage(collision);
+        //healthManager.continousDamage(collision);
+        //if (healthManager.currentHealth == 0)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
 }
