@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class MoveScript : MonoBehaviour
@@ -15,7 +16,8 @@ public class MoveScript : MonoBehaviour
     float walkTriggerTimer;
     Vector3 movementVector;
     Transform healthBarPosition;
-    
+
+    float turnTimer = 0;
     
     void Start()
     {
@@ -28,9 +30,28 @@ public class MoveScript : MonoBehaviour
         walkTriggerTimer += Time.deltaTime;
         moveCharacter();
         moveHealthBar();
+        turnCharacter();
+        turnTimer = turnTimer + Time.deltaTime;
     }
 
-  
+    private void turnCharacter()
+    {
+            var scale = transform.localScale;
+            float flip = 1;
+            if (gameObject.transform.position.y < Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
+            {
+                flip = 0.75f;
+                Debug.Log("Jobbra nézz");
+            }
+            else
+            {
+                flip = -0.75f;
+                Debug.Log("Balra néz");
+            }
+            gameObject.transform.localScale = new Vector3(flip, scale.y, scale.z);
+            turnTimer = 0;
+    }
+
     void moveCharacter()
     {
         movementVector.x = Input.GetAxis("Horizontal");

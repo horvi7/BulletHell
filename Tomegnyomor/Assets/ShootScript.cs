@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using Transform = UnityEngine.Transform;
 
@@ -36,6 +38,7 @@ public class ShootScript : MonoBehaviour
         shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
         shootDirection = shootDirection - firingPoint.position;
         var bulletInstance = Instantiate(bulletPrefab, firingPoint.position, Quaternion.Euler(new Vector3(0, 0, -90)));
+        var normalizedVec2 = shootDirection.normalized;
         bulletInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x * bulletSpeed, shootDirection.y * bulletSpeed);
         Destroy(bulletInstance, bulletLifeTime);
     }
