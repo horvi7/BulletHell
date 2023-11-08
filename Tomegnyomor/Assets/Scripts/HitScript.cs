@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class HitScript : MonoBehaviour
 {
-    public HealthManagerScript healthManager;
+    public Character character;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //healthManager.gotHit(collision);
-        //if (healthManager.currentHealth == 0)
+        character.gotHit(collision);
+        //if (character.currentHealth == 0)
         //{
         //    Destroy(gameObject);
         //}
@@ -17,8 +17,9 @@ public class HitScript : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        //healthManager.continousDamage(collision);
-        //if (healthManager.currentHealth == 0)
+        character.continousDamage(collision);
+        //character.continousDamage(collision);
+        //if (character.currentHealth == 0)
         //{
         //    Destroy(gameObject);
         //}
