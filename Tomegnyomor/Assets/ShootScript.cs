@@ -40,7 +40,6 @@ public class ShootScript : MonoBehaviour
         shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
         shootDirection = shootDirection - firingPoint.position;
         float rotationAngle = Mathf.Atan(shootDirection.x / shootDirection.y) * radToAngle;
-        Debug.Log(rotationAngle);
         var bulletInstance = Instantiate(bulletPrefab, firingPoint.position, Quaternion.Euler(new Vector3(0,0, -rotationAngle)));
         Vector2 velocity = new Vector2(shootDirection.x, shootDirection.y);
         velocity = velocity.normalized * bulletSpeed;
@@ -48,13 +47,4 @@ public class ShootScript : MonoBehaviour
         Destroy(bulletInstance, bulletLifeTime);
     }
 
-    public void ApplyDamage(Collider2D collider)
-    {
-        Enemy e = collider.GetComponent<Enemy>();
-        if (e != null)
-        {
-            collider.GetComponent<Enemy>().TakeDamage(2);
-        }
-        
-    }
 }

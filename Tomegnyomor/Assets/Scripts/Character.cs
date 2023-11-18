@@ -35,15 +35,16 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void gotHit(Collision2D collision)
+    public void makeDamage(int damage)
     {
         //Shotgun egy példa. Ide kell kerülnie minden olyan dolognak, ami megsebezheti a karaktert.
         if (currentHealth > 0)
         {
-            if (collision.gameObject.tag == "Shotgun")
-            {
-                currentHealth -= 2;
-            }
+                currentHealth -= damage;
+        }
+        else
+        {
+            gameOver();
         }
     }
     public void continousDamage(Collision2D collision)
@@ -57,6 +58,10 @@ public class Character : MonoBehaviour
     private void setGreenHealthLength()
     {
         greenHealth.GetComponent<Image>().fillAmount = currentHealth / 100;
+    }
+    private void gameOver()
+    {
+        //Ha <0 hp akkor valami game over screen
     }
 
 

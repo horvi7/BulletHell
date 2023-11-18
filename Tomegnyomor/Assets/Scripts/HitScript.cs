@@ -8,7 +8,7 @@ public class HitScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        character.gotHit(collision);
+       // character.gotHit(collision);
         //if (character.currentHealth == 0)
         //{
         //    Destroy(gameObject);

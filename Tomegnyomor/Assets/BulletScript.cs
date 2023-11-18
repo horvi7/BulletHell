@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    [SerializeField] GameObject bulletPrefab;
+ 
+  
 
 
-
-
-    
 }

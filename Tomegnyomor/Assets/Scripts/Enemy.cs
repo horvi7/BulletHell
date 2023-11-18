@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     Transform targetDestination;
     GameObject targetGameObject;
-    HealthManagerScript targetCharatcer;
+    Character targetCharatcer;
     [SerializeField] float speed;
     
 
@@ -58,10 +58,10 @@ public class Enemy : MonoBehaviour
         //Debug.Log("Attacking the character");
         if (targetCharatcer == null) 
         { 
-            targetCharatcer = targetGameObject.GetComponent<HealthManagerScript>();
+            targetCharatcer = targetGameObject.GetComponent<Character>();
         }
 
-        targetCharatcer.TakeDamage(damage);
+        targetCharatcer.makeDamage(damage);
     }
 
     public void TakeDamage(int damage)
