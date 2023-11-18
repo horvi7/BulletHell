@@ -25445,7 +25445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3d515094e2d3c4ab7fc3c2a5419c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   healthBar: {fileID: 1253009981}
   rigidBody: {fileID: 1041237604}
   animator: {fileID: 1041237618}
@@ -25548,6 +25548,19 @@ MonoBehaviour:
   bulletLifeTime: 3
   shootingRate: 0.5
   bulletSpeed: 15
+--- !u!114 &1041237624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041237603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279e6fb09446033458e65417fc338989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveScript: {fileID: 1041237608}
 --- !u!1 &1100288913
 GameObject:
   m_ObjectHideFlags: 0
@@ -25580,7 +25593,7 @@ MonoBehaviour:
   enemy: {fileID: 5517283671334028834, guid: 9348291473d3c4943b8e39c4ee2ef868, type: 3}
   spawnArea: {x: 15, y: 8}
   spawnTimer: 2
-  player: {fileID: 1645614457}
+  player: {fileID: 1041237603}
 --- !u!4 &1100288915
 Transform:
   m_ObjectHideFlags: 0
@@ -25724,6 +25737,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4361182636781176295, guid: 3f342161fd81307439ae403e7fbe32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1041237622}
+    - targetCorrespondingSourceObject: {fileID: 4361182636781176295, guid: 3f342161fd81307439ae403e7fbe32ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1041237624}
   m_SourcePrefab: {fileID: 100100000, guid: 3f342161fd81307439ae403e7fbe32ae, type: 3}
 --- !u!1 &1571670878
 GameObject:
@@ -25793,7 +25809,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-
 --- !u!1 &1856232330
 GameObject:
   m_ObjectHideFlags: 0
@@ -25805,6 +25820,7 @@ GameObject:
   - component: {fileID: 1856232331}
   - component: {fileID: 1856232332}
   - component: {fileID: 1856232333}
+  - component: {fileID: 1856232334}
   m_Layer: 6
   m_Name: DefaultGun
   m_TagString: DefaultGunBullet
@@ -25925,6 +25941,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.96, y: 3.2535641}
   m_EdgeRadius: 0
+--- !u!114 &1856232334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856232330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9bfbc3c40db0e4fbff9041a4516c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6239961424398492920, guid: c304ee6b5a0d7c34e8ec26fc113dfdde, type: 3}
 --- !u!1 &1858541766
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class MoveScript : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 3;
     public GameObject healthBar;
     public Rigidbody2D rigidBody;
     public Animator animator;
