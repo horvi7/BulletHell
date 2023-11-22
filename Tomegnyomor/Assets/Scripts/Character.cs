@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
+    public TimerScript timerScript;
     public GameObject greenHealth;
     private const float maxHealth = 100f;
     private float currentHealth = maxHealth;
@@ -37,7 +38,7 @@ public class Character : MonoBehaviour
 
     public void makeDamage(int damage)
     {
-        //Shotgun egy példa. Ide kell kerülnie minden olyan dolognak, ami megsebezheti a karaktert.
+        //Shotgun egy pï¿½lda. Ide kell kerï¿½lnie minden olyan dolognak, ami megsebezheti a karaktert.
         if (currentHealth > 0)
         {
                 currentHealth -= damage;
@@ -51,8 +52,8 @@ public class Character : MonoBehaviour
     {
         if (currentHealth > 0)
         {
-            //TODO: Pl tûzben áll akkor mennyit sebzõdjön. Eggyel feljebbi fv jó példa.
-            //Kell bele valami idõzítés, különben élet lemegy pillanat alatt.
+            //TODO: Pl tï¿½zben ï¿½ll akkor mennyit sebzï¿½djï¿½n. Eggyel feljebbi fv jï¿½ pï¿½lda.
+            //Kell bele valami idï¿½zï¿½tï¿½s, kï¿½lï¿½nben ï¿½let lemegy pillanat alatt.
         }
     }
     private void setGreenHealthLength()
@@ -61,7 +62,7 @@ public class Character : MonoBehaviour
     }
     private void gameOver()
     {
-        //Ha <0 hp akkor valami game over screen
+        timerScript.GameOverPopup(false);
     }
 
 
