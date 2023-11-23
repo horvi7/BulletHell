@@ -27064,7 +27064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab8327d0b3c0984b8b8ea858535b6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainingTime: 15
+  remainingTime: 90
   timerText: {fileID: 2066394311}
   gameOverText: {fileID: 144508030}
   restartButton: {fileID: 837156915}

@@ -19,7 +19,7 @@ public class PowerUpScript : MonoBehaviour
 
         if (moveScript != null)
         {
-            moveScript.speed += 3f;
+            moveScript.speed += 2f;
         }
 
         Destroy(gameObject);

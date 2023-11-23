@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
-    public int remainingTime = 5 * 5;
-    public TextMeshProUGUI timerText;
-    public TextMeshProUGUI gameOverText;
-    public GameObject restartButton;
+    [SerializeField] int remainingTime = 5 * 5;
+    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] TextMeshProUGUI gameOverText;
+    [SerializeField] GameObject restartButton;
     private float timer = 1f;
 
 
