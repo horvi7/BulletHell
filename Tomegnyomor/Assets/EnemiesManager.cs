@@ -27,6 +27,7 @@ public class EnemiesManager : MonoBehaviour
         position += player.transform.position;
 
         GameObject newEnemy = Instantiate(enemy);
+        newEnemy.GetComponent<Enemy>().DamageBoost = player.GetComponent<XPScript>().GetDamageBoost();
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);
         newEnemy.transform.parent = transform;

@@ -26015,6 +26015,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveScript: {fileID: 1041237608}
+  enemyScript: {fileID: 6336104676922299786, guid: 9348291473d3c4943b8e39c4ee2ef868, type: 3}
+  damageBoostFactor: 1.5
 --- !u!1 &1100288913
 GameObject:
   m_ObjectHideFlags: 0
@@ -27129,7 +27131,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fde8e2a1ba7a32849a0bf741ffbcd2ea, type: 3}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

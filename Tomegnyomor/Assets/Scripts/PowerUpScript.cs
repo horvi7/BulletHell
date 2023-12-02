@@ -6,7 +6,7 @@ public class PowerUpScript : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D player)
     {
-        if (player.CompareTag("Player"))
+        if (player.CompareTag("Player") && gameObject.tag == "SpeedBoost")
         {
             PickUp(player);
         }
@@ -19,7 +19,7 @@ public class PowerUpScript : MonoBehaviour
 
         if (moveScript != null)
         {
-            moveScript.speed += 2f;
+            moveScript.speed += 0.5f;
         }
 
         Destroy(gameObject);

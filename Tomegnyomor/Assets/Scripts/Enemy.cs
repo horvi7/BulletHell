@@ -8,25 +8,14 @@ public class Enemy : MonoBehaviour
     GameObject targetGameObject;
     Character targetCharatcer;
     [SerializeField] float speed;
-    
+
+    public float DamageBoost { get; set; } = 1.0f;
 
     Rigidbody2D rgdbd2d;
 
-    [SerializeField] int hp = 4;
-    [SerializeField] int damage = 1;
-    //public void gotHit(Collision2D collision)
-    //{
-    //    //Shotgun egy példa. Ide kell kerülnie minden olyan dolognak, ami megsebezheti a karaktert.
-    //    if (currentHealth > 0)
-    //    {
-    //        if (collision.gameObject.tag == Tag)
-    //        {
-    //            currentHealth -= 2;
-    //            Debug.Log(Tag + " attacked");
-    //        }
-    //    }
-    //    else Destroy(gameObject);
-    //}
+    [SerializeField] float hp = 4.0f;
+    [SerializeField] float damage = 1.0f;
+
 
     private void Awake()
     {
@@ -60,11 +49,10 @@ public class Enemy : MonoBehaviour
         { 
             targetCharatcer = targetGameObject.GetComponent<Character>();
         }
-
-        targetCharatcer.makeDamage(damage);
+        targetCharatcer.makeDamage(damage * DamageBoost);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
         Debug.Log(hp + " enemy hp");
@@ -72,6 +60,12 @@ public class Enemy : MonoBehaviour
         if (hp < 0)
         {
             Destroy(gameObject);
+            if (targetCharatcer == null)
+            {
+                targetCharatcer = targetGameObject.GetComponent<Character>();
+            }
+            targetCharatcer.GetComponent<XPScript>().addXP(2);
         }
     }
+
 }

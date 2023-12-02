@@ -36,12 +36,13 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void makeDamage(int damage)
+    public void makeDamage(float damage)
     {
         //Shotgun egy p�lda. Ide kell ker�lnie minden olyan dolognak, ami megsebezheti a karaktert.
         if (currentHealth > 0)
         {
-                currentHealth -= damage;
+            currentHealth -= damage;
+            Debug.Log("Character -hp: " + damage);
         }
         else
         {

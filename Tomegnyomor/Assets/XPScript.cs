@@ -5,27 +5,26 @@ using UnityEngine;
 public class XPScript : MonoBehaviour
 {
     [SerializeField] MoveScript moveScript;
-    int xp = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Enemy enemyScript;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] int XP { get; set; } = 0;
+    [SerializeField] float damageBoostFactor = 1.5f;
 
     public void addXP(int _xp)
     {
-        xp += _xp;
-        speedBasedOnLevel();
+        XP += _xp;
+        levelBasedChange();
 
     }
-    private void speedBasedOnLevel()
+    private void levelBasedChange()
     {
-        moveScript.speed += xp % 10;
+        float speedBoostFactor = 0.05f;
+     
+        moveScript.speed += XP / 10 * speedBoostFactor;
+      
+    }
+    public float GetDamageBoost()
+    {
+        return XP / 10 * damageBoostFactor;
     }
 }

@@ -10,6 +10,7 @@ public class CollisionHandler : MonoBehaviour
         if (e != null)
         {
             e.TakeDamage(2);
+            Destroy(gameObject);
         }
     }
 }
