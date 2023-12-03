@@ -8,11 +8,14 @@ public class PowerUpScript : MonoBehaviour
     {
         if (player.CompareTag("Player") && gameObject.tag == "SpeedBoost")
         {
-            PickUp(player);
+            PickUpSpeedBoost(player);
+        }else if(player.CompareTag("Player") && gameObject.tag == "DamageBoost")
+        {
+            PickUpDamageBoost(player);
         }
     }
 
-    void PickUp(Collider2D player)
+    void PickUpSpeedBoost(Collider2D player)
     {
         // get player
         MoveScript moveScript = player.gameObject.GetComponent<MoveScript>();
@@ -21,7 +24,16 @@ public class PowerUpScript : MonoBehaviour
         {
             moveScript.speed += 0.5f;
         }
-
         Destroy(gameObject);
     }
+
+    void PickUpDamageBoost(Collider2D player)
+    {
+  
+        Debug.Log("Felvette");
+        player.GetComponent<ShootScript>().BulletDamage *= 2; 
+    
+        Destroy(gameObject);
+    }
+
 }

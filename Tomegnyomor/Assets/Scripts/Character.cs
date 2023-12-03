@@ -38,7 +38,6 @@ public class Character : MonoBehaviour
 
     public void makeDamage(float damage)
     {
-        //Shotgun egy p�lda. Ide kell ker�lnie minden olyan dolognak, ami megsebezheti a karaktert.
         if (currentHealth > 0)
         {
             currentHealth -= damage;
@@ -49,14 +48,7 @@ public class Character : MonoBehaviour
             gameOver();
         }
     }
-    public void continousDamage(Collision2D collision)
-    {
-        if (currentHealth > 0)
-        {
-            //TODO: Pl t�zben �ll akkor mennyit sebz�dj�n. Eggyel feljebbi fv j� p�lda.
-            //Kell bele valami id�z�t�s, k�l�nben �let lemegy pillanat alatt.
-        }
-    }
+  
     private void setGreenHealthLength()
     {
         greenHealth.GetComponent<Image>().fillAmount = currentHealth / 100;

@@ -6,7 +6,6 @@ public class XPScript : MonoBehaviour
 {
     [SerializeField] MoveScript moveScript;
     [SerializeField] Enemy enemyScript;
-
     [SerializeField] int XP { get; set; } = 0;
     [SerializeField] float damageBoostFactor = 1.5f;
 

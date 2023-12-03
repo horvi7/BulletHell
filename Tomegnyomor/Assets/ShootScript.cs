@@ -13,12 +13,9 @@ public class ShootScript : MonoBehaviour
     [SerializeField] Transform firingPoint;
     [SerializeField] float bulletLifeTime = 3f;
     [SerializeField] float shootingRate = 0.5f;
+    public float BulletDamage { get; set; } = 2.0f;
     [SerializeField] float bulletSpeed;
     private float fireTimer;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -41,6 +38,7 @@ public class ShootScript : MonoBehaviour
         shootDirection = shootDirection - firingPoint.position;
         float rotationAngle = Mathf.Atan(shootDirection.x / shootDirection.y) * radToAngle;
         var bulletInstance = Instantiate(bulletPrefab, firingPoint.position, Quaternion.Euler(new Vector3(0,0, -rotationAngle)));
+        bulletInstance.GetComponent<CollisionHandler>().Damage = BulletDamage;
         Vector2 velocity = new Vector2(shootDirection.x, shootDirection.y);
         velocity = velocity.normalized * bulletSpeed;
         bulletInstance.GetComponent<Rigidbody2D>().velocity = velocity;

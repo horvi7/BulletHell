@@ -10,11 +10,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] float speed;
 
     public float DamageBoost { get; set; } = 1.0f;
-
+    [SerializeField] float damage = 1.0f;
     Rigidbody2D rgdbd2d;
 
     [SerializeField] float hp = 4.0f;
-    [SerializeField] float damage = 1.0f;
+    
 
 
     private void Awake()
@@ -49,13 +49,13 @@ public class Enemy : MonoBehaviour
         { 
             targetCharatcer = targetGameObject.GetComponent<Character>();
         }
-        targetCharatcer.makeDamage(damage * DamageBoost);
+        targetCharatcer.makeDamage(damage + DamageBoost);
     }
 
     public void TakeDamage(float damage)
     {
         hp -= damage;
-        Debug.Log(hp + " enemy hp");
+        Debug.Log("Damage: " + damage);
 
         if (hp < 0)
         {

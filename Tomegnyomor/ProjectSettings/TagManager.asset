@@ -7,6 +7,8 @@ TagManager:
   - Shotgun
   - Green Slime
   - DefaultGunBullet
+  - SpeedBoost
+  - DamageBoost
   layers:
   - Default
   - TransparentFX
