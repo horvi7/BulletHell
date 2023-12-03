@@ -13,6 +13,8 @@ public class Character : MonoBehaviour
     public GameObject greenHealth;
     private const float maxHealth = 100f;
     private float currentHealth = maxHealth;
+    private bool isDead;
+
 
     float timer = 0;
     void Update()
@@ -38,14 +40,20 @@ public class Character : MonoBehaviour
 
     public void makeDamage(float damage)
     {
+        if (isDead)
+        {
+            return;
+        }
         if (currentHealth > 0)
         {
             currentHealth -= damage;
             Debug.Log("Character -hp: " + damage);
         }
-        else
+        else if (currentHealth <= 0)
         {
+            //GetComponent<CharacterGameOver>().GameOver();
             gameOver();
+            isDead = true;
         }
     }
   

@@ -53,7 +53,7 @@ public class TimerScript : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void GameOverPopup(bool win)
