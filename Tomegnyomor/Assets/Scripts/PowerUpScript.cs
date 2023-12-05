@@ -17,7 +17,6 @@ public class PowerUpScript : MonoBehaviour
 
     void PickUpSpeedBoost(Collider2D player)
     {
-        // get player
         MoveScript moveScript = player.gameObject.GetComponent<MoveScript>();
 
         if (moveScript != null)

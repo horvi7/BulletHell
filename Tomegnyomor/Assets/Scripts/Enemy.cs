@@ -8,11 +8,9 @@ public class Enemy : MonoBehaviour
     GameObject targetGameObject;
     Character targetCharatcer;
     [SerializeField] float speed;
-
     public float DamageBoost { get; set; } = 1.0f;
     [SerializeField] float damage = 1.0f;
     Rigidbody2D rgdbd2d;
-
     [SerializeField] float hp = 4.0f;
     
 
@@ -44,7 +42,6 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
-        //Debug.Log("Attacking the character");
         if (targetCharatcer == null) 
         { 
             targetCharatcer = targetGameObject.GetComponent<Character>();

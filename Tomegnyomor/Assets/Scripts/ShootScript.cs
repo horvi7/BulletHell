@@ -17,7 +17,6 @@ public class ShootScript : MonoBehaviour
     [SerializeField] float bulletSpeed;
     private float fireTimer;
 
-    // Update is called once per frame
     void Update()
     {
         fireTimer += Time.deltaTime;

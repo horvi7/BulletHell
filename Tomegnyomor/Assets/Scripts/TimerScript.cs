@@ -12,9 +12,6 @@ public class TimerScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI gameOverText;
     [SerializeField] GameObject restartButton;
     private float timer = 1f;
-
-
-    // Start is called before the first frame update
     void Start()
     {
         timerText.text = GetTime();
@@ -24,7 +21,6 @@ public class TimerScript : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer -= Time.deltaTime;
@@ -34,7 +30,6 @@ public class TimerScript : MonoBehaviour
             timer = 1f;
         }
 
-        // If remaining time is 0 or less game is won
         if (remainingTime <= 0)
         {
             GameOverPopup(true);

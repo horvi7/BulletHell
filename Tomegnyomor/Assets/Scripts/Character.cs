@@ -51,7 +51,6 @@ public class Character : MonoBehaviour
         }
         else if (currentHealth <= 0)
         {
-            //GetComponent<CharacterGameOver>().GameOver();
             gameOver();
             isDead = true;
         }
