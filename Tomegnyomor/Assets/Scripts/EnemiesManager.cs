@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
+    [SerializeField] GameObject ghost;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject player;
     float timer;
-
+    int enemyType = 0;
     private void Update()
     {
         timer -= Time.deltaTime;
@@ -23,10 +24,19 @@ public class EnemiesManager : MonoBehaviour
     private void SpawnEnemy()
     {
         Vector3 position = GenerateRandomPosition();
-
         position += player.transform.position;
-
-        GameObject newEnemy = Instantiate(enemy);
+        GameObject newEnemy;
+        if (enemyType == 0)
+        {
+            newEnemy = Instantiate(enemy);
+            enemyType++;
+        }
+        else
+        {
+            newEnemy = Instantiate(ghost);
+            enemyType--;
+        }
+        
         newEnemy.GetComponent<Enemy>().DamageBoost = player.GetComponent<XPScript>().GetDamageBoost();
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);
