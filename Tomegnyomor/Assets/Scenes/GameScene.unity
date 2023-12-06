@@ -636,8 +636,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449938517}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 1.09, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5921054, y: 1.09, z: 0.7335284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26685,6 +26685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5517283671334028834, guid: 9348291473d3c4943b8e39c4ee2ef868, type: 3}
+  ghost: {fileID: 4214624813200562691, guid: 1856a4da37db9244b94cea7a411ef113, type: 3}
   spawnArea: {x: 15, y: 8}
   spawnTimer: 2
   player: {fileID: 1041237603}
